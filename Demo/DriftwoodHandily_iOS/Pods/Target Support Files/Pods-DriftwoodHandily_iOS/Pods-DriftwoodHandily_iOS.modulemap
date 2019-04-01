@@ -1,0 +1,6 @@
+module Pods_DriftwoodHandily_iOS {
+  umbrella header "Pods-DriftwoodHandily_iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
