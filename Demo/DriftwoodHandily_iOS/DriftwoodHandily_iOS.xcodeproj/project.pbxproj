@@ -13,6 +13,7 @@
 		CA7B89872251D226002D81B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7B89852251D226002D81B0 /* Main.storyboard */; };
 		CA7B89892251D227002D81B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA7B89882251D227002D81B0 /* Assets.xcassets */; };
 		CA7B898C2251D227002D81B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7B898A2251D227002D81B0 /* LaunchScreen.storyboard */; };
+		CA7B89942251D9ED002D81B0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B89932251D9ED002D81B0 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CA7B89882251D227002D81B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA7B898B2251D227002D81B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA7B898D2251D227002D81B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA7B89932251D9ED002D81B0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +56,6 @@
 				5B71527A8CB0477C22BD0DC8 /* Pods-DriftwoodHandily_iOS.debug.xcconfig */,
 				668200A7626C090946B9B961 /* Pods-DriftwoodHandily_iOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,6 +82,7 @@
 			children = (
 				CA7B89812251D226002D81B0 /* AppDelegate.swift */,
 				CA7B89832251D226002D81B0 /* ViewController.swift */,
+				CA7B89932251D9ED002D81B0 /* Utils.swift */,
 				CA7B89852251D226002D81B0 /* Main.storyboard */,
 				CA7B89882251D227002D81B0 /* Assets.xcassets */,
 				CA7B898A2251D227002D81B0 /* LaunchScreen.storyboard */,
@@ -188,6 +190,7 @@
 			files = (
 				CA7B89842251D226002D81B0 /* ViewController.swift in Sources */,
 				CA7B89822251D226002D81B0 /* AppDelegate.swift in Sources */,
+				CA7B89942251D9ED002D81B0 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
