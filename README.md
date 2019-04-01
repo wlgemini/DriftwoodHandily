@@ -19,7 +19,7 @@ pod 'DriftwoodHandily'
 
 ## Usage
 
-Same as [Driftwood](https://github.com/wlgemini/Driftwood), but shortcutting for it.
+Same as [Driftwood](https://github.com/wlgemini/Driftwood), but remove all `dw` prefix for it.
 
 ## Demo
 
