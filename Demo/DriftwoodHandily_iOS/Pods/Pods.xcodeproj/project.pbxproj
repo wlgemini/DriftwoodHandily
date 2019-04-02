@@ -93,9 +93,11 @@
 		105445B593AFA068ABA8D71D68BBE9A0 /* DriftwoodHandily */ = {
 			isa = PBXGroup;
 			children = (
+				D5ED103B3B7D969568959C8CFA6ADC3A /* LayoutGuide+DriftwoodHandily.swift */,
+				4175D96BD129F9FD0478C8F782CFF714 /* View+DriftwoodHandily.swift */,
+				048098AC56E3552A01A2AD05BDC33A75 /* Typealiases.swift */,
 				30AE41AB24B56121E25A20E0E39BD2DA /* ConstraintAttribute.swift */,
 				B9BBE5E24CB5DC0DA24D25ADFFD67A22 /* ConstraintItem.swift */,
-				048098AC56E3552A01A2AD05BDC33A75 /* Typealiases.swift */,
 				62B4C09CBBA03505E4F6A3F7612625C1 /* ConstraintMaker.swift */,
 				E2F74C3CD567A13CD9259F3AB0888E51 /* ConstraintMaker+Handy.swift */,
 				D7F8C0B6C4406B9C9A1ECDF93B826F7B /* ConstraintRemover.swift */,
@@ -105,8 +107,6 @@
 				DB629F877369E14343E16D60771E8BA2 /* ConstraintsStorage.swift */,
 				EF0CEAA7ECCEB5E421FF6987A5A24D8B /* LayoutConstraint.swift */,
 				78A88F4ECFDB0A38E81DAA8FEE070C9F /* Debugging.swift */,
-				D5ED103B3B7D969568959C8CFA6ADC3A /* LayoutGuide+DriftwoodHandily.swift */,
-				4175D96BD129F9FD0478C8F782CFF714 /* View+DriftwoodHandily.swift */,
 				C5521661202F6A8EA1C3C1AA83AA9F9D /* Pod */,
 				F4F9ADE8C90A3D4AADE398CA496CB617 /* Support Files */,
 			);
