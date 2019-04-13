@@ -22,14 +22,28 @@
 //  SOFTWARE.
 
 
-/// View (ConstraintItem)
-extension View: ConstraintItem {
+/// Preferences
+public struct Preferences {}
+
+
+/// Preferences (Default settings for View)
+extension Preferences {
     
-    public var dwh_superview: ConstraintItem? {
-        return self.superview
-    }
-    
-    public var dwh_hashValue: Int {
-        return self.hashValue
-    }
+    /// translatesAutoresizingMaskIntoConstraints for View
+    static let translatesAutoresizingMaskIntoConstraints: Bool = false
 }
+
+
+/// Preferences (Default settings for Constraint)
+public extension Preferences {
+    
+    /// relation
+    static let relation: Relation = .equal
+    
+    /// multiply
+    static let multiply: CGFloat = 1.0
+    
+    /// priority (Changeable)
+    static var priority: Priority = .required
+}
+
