@@ -144,6 +144,7 @@ public extension ConstraintItem {
 public extension ConstraintItem {
     
     /// attaching a debug-label for current View/LayoutGuide
+    @discardableResult
     func labeled(_ lb: String) -> ConstraintItem {
         self.storage.labeled = lb
         return self
