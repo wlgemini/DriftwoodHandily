@@ -38,17 +38,17 @@ public extension ConstraintItem {
     
     /// make
     func make(file: String = #file, line: UInt = #line) -> ConstraintMaker {
-        return ConstraintMaker(item: self, location: Debug.Location(file, line))
+        ConstraintMaker(item: self, location: Debug.Location(file, line))
     }
     
     /// update
     func update(file: String = #file, line: UInt = #line) -> ConstraintUpdater {
-        return ConstraintUpdater(item: self, location: Debug.Location(file, line))
+        ConstraintUpdater(item: self, location: Debug.Location(file, line))
     }
     
     /// remove
     func remove(file: String = #file, line: UInt = #line) -> ConstraintRemover {
-        return ConstraintRemover(item: self, location: Debug.Location(file, line))
+        ConstraintRemover(item: self, location: Debug.Location(file, line))
     }
     
     /// remake
@@ -67,35 +67,35 @@ public extension ConstraintItem {
     //===========================================
     //
     /// left
-    var left: ConstraintAttributeX { return .left(self) }
+    var left: ConstraintAttributeX { .left(self) }
     
     /// right
-    var right: ConstraintAttributeX { return .right(self) }
+    var right: ConstraintAttributeX { .right(self) }
     
     /// leading
-    var leading: ConstraintAttributeX { return .leading(self) }
+    var leading: ConstraintAttributeX { .leading(self) }
     
     /// trailing
-    var trailing: ConstraintAttributeX { return .trailing(self) }
+    var trailing: ConstraintAttributeX { .trailing(self) }
     
     /// centerX
-    var centerX: ConstraintAttributeX { return .centerX(self) }
+    var centerX: ConstraintAttributeX { .centerX(self) }
     
     #if os(iOS) || os(tvOS)
     /// leftMargin
-    var leftMargin: ConstraintAttributeX { return .leftMargin(self) }
+    var leftMargin: ConstraintAttributeX { .leftMargin(self) }
     
     /// rightMargin
-    var rightMargin: ConstraintAttributeX { return .rightMargin(self) }
+    var rightMargin: ConstraintAttributeX { .rightMargin(self) }
     
     /// leadingMargin
-    var leadingMargin: ConstraintAttributeX { return .leadingMargin(self) }
+    var leadingMargin: ConstraintAttributeX { .leadingMargin(self) }
     
     /// trailingMargin
-    var trailingMargin: ConstraintAttributeX { return .trailingMargin(self) }
+    var trailingMargin: ConstraintAttributeX { .trailingMargin(self) }
     
     /// centerXWithinMargins
-    var centerXWithinMargins: ConstraintAttributeX { return .centerXWithinMargins(self) }
+    var centerXWithinMargins: ConstraintAttributeX { .centerXWithinMargins(self) }
     #endif
     
     //===========================================
@@ -103,29 +103,29 @@ public extension ConstraintItem {
     //===========================================
     //
     /// top
-    var top: ConstraintAttributeY { return .top(self) }
+    var top: ConstraintAttributeY { .top(self) }
     
     /// bottom
-    var bottom: ConstraintAttributeY { return .bottom(self) }
+    var bottom: ConstraintAttributeY { .bottom(self) }
     
     /// centerY
-    var centerY: ConstraintAttributeY { return .centerY(self) }
+    var centerY: ConstraintAttributeY { .centerY(self) }
     
     /// lastBaseline
-    var lastBaseline: ConstraintAttributeY { return .lastBaseline(self) }
+    var lastBaseline: ConstraintAttributeY { .lastBaseline(self) }
     
     /// firstBaseline
-    var firstBaseline: ConstraintAttributeY { return .firstBaseline(self) }
+    var firstBaseline: ConstraintAttributeY { .firstBaseline(self) }
     
     #if os(iOS) || os(tvOS)
     /// topMargin
-    var topMargin: ConstraintAttributeY { return .topMargin(self) }
+    var topMargin: ConstraintAttributeY { .topMargin(self) }
     
     /// bottomMargin
-    var bottomMargin: ConstraintAttributeY { return .bottomMargin(self) }
+    var bottomMargin: ConstraintAttributeY { .bottomMargin(self) }
     
     /// centerYWithinMargins
-    var centerYWithinMargins: ConstraintAttributeY { return .centerYWithinMargins(self) }
+    var centerYWithinMargins: ConstraintAttributeY { .centerYWithinMargins(self) }
     #endif
     
     //===========================================
@@ -133,10 +133,10 @@ public extension ConstraintItem {
     //===========================================
     //
     /// width
-    var width: ConstraintAttributeSize { return .width(self) }
+    var width: ConstraintAttributeSize { .width(self) }
     
     /// height
-    var height: ConstraintAttributeSize { return .height(self) }
+    var height: ConstraintAttributeSize { .height(self) }
 }
 
 
@@ -145,7 +145,7 @@ public extension ConstraintItem {
     
     /// attaching a debug-label for current View/LayoutGuide
     @discardableResult
-    func labeled(_ lb: String) -> ConstraintItem {
+    func labeled(_ lb: String) -> Self {
         self.storage.labeled = lb
         return self
     }
@@ -168,7 +168,7 @@ extension ConstraintItem {
     
     /// _storage
     var _storage: ConstraintsStorage? {
-        get { return objc_getAssociatedObject(self, &_storageKey) as? ConstraintsStorage }
+        get { objc_getAssociatedObject(self, &_storageKey) as? ConstraintsStorage }
         set { objc_setAssociatedObject(self, &_storageKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
 }

@@ -25,11 +25,7 @@
 /// View (ConstraintItem)
 extension View: ConstraintItem {
     
-    public var dwh_superview: ConstraintItem? {
-        return self.superview
-    }
+    public var dwh_superview: ConstraintItem? { self.superview }
     
-    public var dwh_hashValue: Int {
-        return self.hashValue
-    }
+    public var dwh_hashValue: Int { self.hashValue }
 }

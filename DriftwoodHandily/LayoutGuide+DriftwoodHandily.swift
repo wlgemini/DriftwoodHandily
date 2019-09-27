@@ -26,11 +26,7 @@
 @available(iOS 9.0, macOS 10.11, *)
 extension LayoutGuide: ConstraintItem {
     
-    public var dwh_superview: ConstraintItem? {
-        return self.owningView
-    }
+    public var dwh_superview: ConstraintItem? { self.owningView }
     
-    public var dwh_hashValue: Int {
-        return self.hashValue
-    }
+    public var dwh_hashValue: Int { self.hashValue }
 }
