@@ -27,6 +27,4 @@
 extension LayoutGuide: ConstraintItem {
     
     public var dwh_superview: ConstraintItem? { self.owningView }
-    
-    public var dwh_hashValue: Int { self.hashValue }
 }

@@ -27,9 +27,6 @@ public protocol ConstraintItem: AnyObject {
     
     /// superview
     var dwh_superview: ConstraintItem? { get }
-    
-    /// hashValue
-    var dwh_hashValue: Int { get }
 }
 
 
@@ -175,4 +172,4 @@ extension ConstraintItem {
 
 
 /// _storage Key
-fileprivate var _storageKey: Void?
+private var _storageKey: Void?

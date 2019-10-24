@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                    = 'DriftwoodHandily'
-  s.version                 = '5.1.2'
+  s.version                 = '5.1.3'
   s.summary                 = 'Shortcutting for Driftwood.'
   s.homepage                = 'https://github.com/wlgemini/DriftwoodHandily'
   s.license                 = { :type => 'MIT', :file => 'LICENSE' }
