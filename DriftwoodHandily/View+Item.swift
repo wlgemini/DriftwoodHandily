@@ -22,8 +22,8 @@
 //  SOFTWARE.
 
 
-/// View (ConstraintItem)
-extension View: ConstraintItem {
+/// View (Item)
+extension View: Item {
     
-    public var dwh_superview: ConstraintItem? { self.superview }
+    public var dwh_superview: Item? { self.superview }
 }

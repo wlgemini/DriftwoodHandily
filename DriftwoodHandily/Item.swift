@@ -22,16 +22,16 @@
 //  SOFTWARE.
 
 
-/// ConstraintItem
-public protocol ConstraintItem: AnyObject {
+/// Item
+public protocol Item: AnyObject {
     
     /// superview
-    var dwh_superview: ConstraintItem? { get }
+    var dwh_superview: Item? { get }
 }
 
 
-/// ConstraintItem (Make, Update, Remove, Remake constraint)
-public extension ConstraintItem {
+/// Item (Make, Update, Remove, Remake constraint)
+public extension Item {
     
     /// make
     func make(file: String = #file, line: UInt = #line) -> ConstraintMaker {
@@ -56,89 +56,89 @@ public extension ConstraintItem {
 }
 
 
-/// ConstraintItem (ConstraintAttribute)
-public extension ConstraintItem {
+/// Item (Attribute)
+public extension Item {
     
     //===========================================
-    // ConstraintAttributeX
+    // AttributeX
     //===========================================
     //
     /// left
-    var left: ConstraintAttributeX { .left(self) }
+    var left: AttributeX { .left(self) }
     
     /// right
-    var right: ConstraintAttributeX { .right(self) }
+    var right: AttributeX { .right(self) }
     
     /// leading
-    var leading: ConstraintAttributeX { .leading(self) }
+    var leading: AttributeX { .leading(self) }
     
     /// trailing
-    var trailing: ConstraintAttributeX { .trailing(self) }
+    var trailing: AttributeX { .trailing(self) }
     
     /// centerX
-    var centerX: ConstraintAttributeX { .centerX(self) }
+    var centerX: AttributeX { .centerX(self) }
     
     #if os(iOS) || os(tvOS)
     /// leftMargin
-    var leftMargin: ConstraintAttributeX { .leftMargin(self) }
+    var leftMargin: AttributeX { .leftMargin(self) }
     
     /// rightMargin
-    var rightMargin: ConstraintAttributeX { .rightMargin(self) }
+    var rightMargin: AttributeX { .rightMargin(self) }
     
     /// leadingMargin
-    var leadingMargin: ConstraintAttributeX { .leadingMargin(self) }
+    var leadingMargin: AttributeX { .leadingMargin(self) }
     
     /// trailingMargin
-    var trailingMargin: ConstraintAttributeX { .trailingMargin(self) }
+    var trailingMargin: AttributeX { .trailingMargin(self) }
     
     /// centerXWithinMargins
-    var centerXWithinMargins: ConstraintAttributeX { .centerXWithinMargins(self) }
+    var centerXWithinMargins: AttributeX { .centerXWithinMargins(self) }
     #endif
     
     //===========================================
-    // ConstraintAttributeY
+    // AttributeY
     //===========================================
     //
     /// top
-    var top: ConstraintAttributeY { .top(self) }
+    var top: AttributeY { .top(self) }
     
     /// bottom
-    var bottom: ConstraintAttributeY { .bottom(self) }
+    var bottom: AttributeY { .bottom(self) }
     
     /// centerY
-    var centerY: ConstraintAttributeY { .centerY(self) }
+    var centerY: AttributeY { .centerY(self) }
     
     /// lastBaseline
-    var lastBaseline: ConstraintAttributeY { .lastBaseline(self) }
+    var lastBaseline: AttributeY { .lastBaseline(self) }
     
     /// firstBaseline
-    var firstBaseline: ConstraintAttributeY { .firstBaseline(self) }
+    var firstBaseline: AttributeY { .firstBaseline(self) }
     
     #if os(iOS) || os(tvOS)
     /// topMargin
-    var topMargin: ConstraintAttributeY { .topMargin(self) }
+    var topMargin: AttributeY { .topMargin(self) }
     
     /// bottomMargin
-    var bottomMargin: ConstraintAttributeY { .bottomMargin(self) }
+    var bottomMargin: AttributeY { .bottomMargin(self) }
     
     /// centerYWithinMargins
-    var centerYWithinMargins: ConstraintAttributeY { .centerYWithinMargins(self) }
+    var centerYWithinMargins: AttributeY { .centerYWithinMargins(self) }
     #endif
     
     //===========================================
-    // ConstraintAttributeSize
+    // AttributeSize
     //===========================================
     //
     /// width
-    var width: ConstraintAttributeSize { .width(self) }
+    var width: AttributeSize { .width(self) }
     
     /// height
-    var height: ConstraintAttributeSize { .height(self) }
+    var height: AttributeSize { .height(self) }
 }
 
 
-/// ConstraintItem (Debugging)
-public extension ConstraintItem {
+/// Item (Debugging)
+public extension Item {
     
     /// attaching a debug-label for current View/LayoutGuide
     @discardableResult
@@ -149,8 +149,8 @@ public extension ConstraintItem {
 }
 
 
-/// ConstraintItem (ConstraintsStorage)
-extension ConstraintItem {
+/// Item (ConstraintsStorage)
+extension Item {
     
     /// storage
     var storage: ConstraintsStorage {

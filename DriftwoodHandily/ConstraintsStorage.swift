@@ -26,7 +26,7 @@
 class ConstraintsStorage {
     
     // MARK: Debug
-    /// labeled name for current ConstraintItem
+    /// labeled name for current Item
     var labeled: String?
     
     // MARK: Constraint activate & update & deactivate
@@ -93,7 +93,7 @@ class ConstraintsStorage {
     }
     
     /// get a constraint cached by DriftwoodHandily
-    func constraint(item: ConstraintItem, attribute: Attribute, relation: Relation, toItem: ConstraintItem?, toAttribute: Attribute, multiply: CGFloat, constant: CGFloat, priority: Priority) -> Constraint {
+    func constraint(item: Item, attribute: Attribute, relation: Relation, toItem: Item?, toAttribute: Attribute, multiply: CGFloat, constant: CGFloat, priority: Priority) -> Constraint {
         // 0. generate a constraint key (key calculation not include item/constant/priority)
         let conKey = ConstraintKey(attribute: attribute, toItem: toItem, toAttribute: toAttribute, relation: relation, multiply: multiply)
         
