@@ -124,8 +124,10 @@ class ConstraintsStorage {
     //===========================================
     //
     /// active constraints
-    private var _activeConstraints: [Attribute: Constraint] = [:]
+    ///
+    /// In most case, there will be 4 active constraints on each Item
+    private var _activeConstraints = [Attribute: Constraint](minimumCapacity: 4)
     
     /// cached constraints (include active/deactive constraints)
-    private var _cachedConstraints: [ConstraintKey: Constraint] = [:]
+    private var _cachedConstraints = [ConstraintKey: Constraint](minimumCapacity: 4)
 }
