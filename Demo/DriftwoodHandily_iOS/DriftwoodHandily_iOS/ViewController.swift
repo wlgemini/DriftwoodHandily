@@ -8,53 +8,34 @@ import DriftwoodHandily
 
 class ViewController: UIViewController {
     
-    private weak var lb1: UILabel!
-    private weak var lb2: UILabel!
-    private weak var lb3: UILabel!
-    private weak var lb4: UILabel!
-    private weak var lb5: UILabel!
-    
+    private weak var vTop: UIView!
+    private weak var vBottom: UIView!
+    private weak var vCenter: UIView!
+    private weak var vLeading: UIView!
+    private weak var vTrailing: UIView!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.lb1 = self.view.createSubView()
-        self.lb1.text = "1"
-        self.lb1.textAlignment = .center
-        self.lb1.labeled("label1").make().leading(0).trailing(0).top(0, to: self.view.safeAreaLayoutGuide.top).height(50)
+        self.vTop = self.view.createSubView()
+        self.vTop.make(labeled: "Top").bottom(0, to: self.view.safeAreaLayoutGuide.top).top(0).leading(0).trailing(0)
         
-        self.lb2 = self.view.createSubView()
-        self.lb2.text = "2"
-        self.lb2.textAlignment = .center
-        self.lb2.labeled("label2").make().leading(0).trailing(0).bottom(0, to: self.view.safeAreaLayoutGuide.bottom).height(50)
+        self.vBottom = self.view.createSubView()
+        self.vBottom.make(labeled: "Bottom").top(0, to: self.view.safeAreaLayoutGuide.bottom).bottom(0).leading(0).trailing(0)
         
-        self.lb3 = self.view.createSubView()
-        self.lb3.text = "3"
-        self.lb3.textAlignment = .center
-        self.lb3.labeled("label3").make().centerXY(offsets: .zero).width(250).height(300)
+        self.vCenter = self.view.createSubView()
+        self.vCenter.make(labeled: "Center").centerXY(offsets: .zero).width(100).height(150)
         
-        self.lb4 = self.view.createSubView()
-        self.lb4.text = "4"
-        self.lb4.textAlignment = .center
-        self.lb4.labeled("label4").make().centerXY(offsets: CGPoint(x: 50, y: 50), to: self.lb3).size(to: self.lb3)
+        self.vLeading = self.view.createSubView()
+        self.vLeading.make(labeled: "Leading").leading(0).trailing(0, to: self.vCenter.leading).centerY(0, to: self.vCenter.centerY).height(100)
         
-        self.lb5 = self.view.createSubView()
-        self.lb5.text = "5"
-        self.lb5.textAlignment = .center
-        self.lb5.labeled("label5").make().edge(insets: UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 30), to: self.lb4)
+        self.vTrailing = self.view.createSubView()
+        self.vTrailing.make(labeled: "Trailing").trailing(0).leading(0, to: self.vCenter.trailing).top(0, to: self.vCenter.top).height(100)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        self.lb1.remake().leading(10).trailing(-10).top(0).bottom(0, to: self.view.safeAreaLayoutGuide.top)
-        
-        self.lb2.remake().leading(10).trailing(-10).bottom(0).top(0, to: self.view.safeAreaLayoutGuide.bottom)
-        
-        self.lb3.update().centerXY(offsets: CGPoint(x: -50, y: -50))
-        
-        self.lb4.update().centerXY(offsets: CGPoint(x: 150, y: 150))
-        self.lb4.remove().size()
-        self.lb4.make().size(to: self.lb3, multiply: 0.75)
-        
-        self.lb5.update().edge(insets: UIEdgeInsets(top: 30, left: 30, bottom: 0, right: 0))
+        self.vCenter.update().centerXY(offsets: CGPoint(x: 0, y: 100))
+        self.vLeading.update().height(150)
+        self.vTrailing.update().height(200)
     }
 }

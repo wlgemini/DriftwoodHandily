@@ -1,5 +1,5 @@
 PODS:
-  - DriftwoodHandily (5.0.0)
+  - DriftwoodHandily (5.1.4)
 
 DEPENDENCIES:
   - DriftwoodHandily (from `../../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  DriftwoodHandily: b6a8cd9deed2e4328a7f70683db87d4ffde23b92
+  DriftwoodHandily: c1b2f97b174226ee0fb3942a3410b1dc96fa2b71
 
 PODFILE CHECKSUM: 3cf1949e464c091629e4d2a133628968dfc42bd9
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.4
