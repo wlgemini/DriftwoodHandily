@@ -34,22 +34,26 @@ public protocol Item: AnyObject {
 public extension Item {
     
     /// make
-    func make(file: String = #file, line: UInt = #line) -> ConstraintMaker {
-        ConstraintMaker(item: self, location: Debug.Location(file, line))
+    func make(labeled lb: String? = nil, file: String = #file, line: UInt = #line) -> ConstraintMaker {
+        self.storage.labeled = lb
+        return ConstraintMaker(item: self, location: Debug.Location(file, line))
     }
     
     /// update
-    func update(file: String = #file, line: UInt = #line) -> ConstraintUpdater {
-        ConstraintUpdater(item: self, location: Debug.Location(file, line))
+    func update(labeled lb: String? = nil, file: String = #file, line: UInt = #line) -> ConstraintUpdater {
+        self.storage.labeled = lb
+        return ConstraintUpdater(item: self, location: Debug.Location(file, line))
     }
     
     /// remove
-    func remove(file: String = #file, line: UInt = #line) -> ConstraintRemover {
-        ConstraintRemover(item: self, location: Debug.Location(file, line))
+    func remove(labeled lb: String? = nil, file: String = #file, line: UInt = #line) -> ConstraintRemover {
+        self.storage.labeled = lb
+        return ConstraintRemover(item: self, location: Debug.Location(file, line))
     }
     
     /// remake
-    func remake(file: String = #file, line: UInt = #line) -> ConstraintMaker {
+    func remake(labeled lb: String? = nil, file: String = #file, line: UInt = #line) -> ConstraintMaker {
+        self.storage.labeled = lb
         self.storage.deactivateAll()
         return ConstraintMaker(item: self, location: Debug.Location(file, line))
     }
@@ -134,18 +138,6 @@ public extension Item {
     
     /// height
     var height: AttributeSize { .height(self) }
-}
-
-
-/// Item (Debugging)
-public extension Item {
-    
-    /// attaching a debug-label for current View/LayoutGuide
-    @discardableResult
-    func labeled(_ lb: String) -> Self {
-        self.storage.labeled = lb
-        return self
-    }
 }
 
 
